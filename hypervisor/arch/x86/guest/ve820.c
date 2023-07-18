@@ -210,8 +210,8 @@ static const struct e820_entry pre_ve820_template[E820_MAX_ENTRIES] = {
 		.type	  = E820_TYPE_ACPI_NVS
 	},
 	{	/* 32bit PCI hole */
-		.baseaddr = 0x80000000UL,	/* 2048MB */
-		.length   = MEM_2G,
+		.baseaddr = (0x80000000UL + 0x00400000),	/* 2048MB */		//  Dunamis MCX-CM220 (UNO-148)
+		.length   = (MEM_2G - 0x00400000),				
 		.type     = E820_TYPE_RESERVED
 	},
 };
